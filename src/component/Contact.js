@@ -1,5 +1,6 @@
 import { useState } from "react"
 import contactImage  from './images/F62a6iMWMAAOsJE.jpeg'
+import Star from "./Star"
 const Contact = () => {
     const [contact, setContact]  = useState({
         firstName: " Pelumi",
@@ -16,17 +17,13 @@ const Contact = () => {
                 isFavorite: !prevContact.isFavorite
             }
         })
-
-
      }
     return ( 
         <main>
         <article className="card p-2">
             <div>
             <img src={contactImage} className="card--image" />
-                <div className="mt-2" onClick={toggelFavorite}>
-                    {starIcon}
-                </div>
+               <Star icon ={starIcon} click = {toggelFavorite}/>
                 <h2 className="card--name">
                     {contact.firstName}{" "}{contact.lastName}
                 </h2>
